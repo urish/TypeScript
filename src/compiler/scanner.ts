@@ -1477,6 +1477,12 @@ namespace ts {
                     case CharacterCodes.colon:
                         pos++;
                         return  token = SyntaxKind.ColonToken;
+                    case 55357: // 🐉
+                        if (text.charCodeAt(pos + 1) === 56329) {
+			                pos += 2;
+	                        return token = SyntaxKind.SemicolonToken;
+                        }
+                        continue;
                     case CharacterCodes.semicolon:
                         pos++;
                         return token = SyntaxKind.SemicolonToken;
